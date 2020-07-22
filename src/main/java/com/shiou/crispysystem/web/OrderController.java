@@ -1,5 +1,6 @@
-package com.shiou.crispysystem;
+package com.shiou.crispysystem.web;
 
+import com.shiou.crispysystem.Order;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
