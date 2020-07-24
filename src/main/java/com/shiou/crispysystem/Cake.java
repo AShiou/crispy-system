@@ -19,9 +19,9 @@ import javax.validation.constraints.Size;
 public class Cake {
   private Long id;
   private Date createdAt;
-  //@NotNull
-  //@Size(min = 5, message = "Name must be at least 5 characters long")
+  @NotNull
+  @Size(min = 5, message = "Name must be at least 5 characters long")
   private String name;
-  //@Size(min= 1, message = "You must choose at least 1 decoration")
-  private List<String> decorations;
+//  @Size(min= 1, message = "You must choose at least 1 decoration")
+  private List<Decoration> decorations;
 }

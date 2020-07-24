@@ -10,6 +10,11 @@ create table if not exists Cake (
     createdAt timestamp not null
 );
 
+create table if not exists Cake_Decorations (
+    cake bigint not null,
+    decoration varchar(4) not null
+);
+
 alter table Cake_Decorations
     add foreign key (cake) references Cake(id);
 alter table Cake_Decorations
@@ -28,12 +33,13 @@ create table if not exists Cake_Order (
     placedAt timestamp not null
 );
 
-create table if not exists Cake_Order_Cakes {
+create table if not exists Cake_Order_Cakes (
     cakeOrder bigint not null,
     cake bigint not null
-};
+);
 
 alter table Cake_Order_Cakes
     add foreign key (cakeOrder) references Cake_Order(id);
 alter table Cake_Order_Cakes
-    add foreign key(cake) references Cake(id);
+    add foreign key (cake) references Cake(id);
+

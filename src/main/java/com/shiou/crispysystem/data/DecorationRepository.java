@@ -1,6 +1,7 @@
 package com.shiou.crispysystem.data;
 
 import com.shiou.crispysystem.Decoration;
+import org.springframework.stereotype.Repository;
 
 /**
  * TODO
