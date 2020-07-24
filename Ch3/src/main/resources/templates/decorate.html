@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Cake Cloud</title>
+    <link rel="stylesheet" th:href="@{/styles.css}"/>
+</head>
+
+<body>
+<h1>Decorate your cake!</h1>
+<img th:src="@{/images/cake.png}" th:width="200"/>
+
+<form method="POST" th:object="${cake}">
+<!--    <span class="validationError"-->
+<!--          th:if="${#fields.hasErrors('decorations')}"-->
+<!--          th:errors="*{decorations}">Decorations Error</span>-->
+    <div class="grid">
+        <div class="decoration-group" id="cream">
+            <h3> Designate your cream:</h3>
+            <div th:each="decoration : ${cream}">
+                <input name="decorations" type="checkbox" th:value="${decoration.id}"/>
+                <span th:text="${decoration.name}">DECORATION</span>
+                <br/>
+            </div>
+        </div>
+        <div class="decoration-group" id="fruit">
+            <h3> Designate your fruit:</h3>
+            <div th:each="decoration : ${fruit}">
+                <input name="decorations" type="checkbox" th:value="${decoration.id}"/>
+                <span th:text="${decoration.name}">DECORATION</span>
+                <br/>
+            </div>
+        </div>
+        <div class="decoration-group" id="candy">
+            <h3> Designate your fruit:</h3>
+            <div th:each="decoration : ${candy}">
+                <input name="decorations" type="checkbox" th:value="${decoration.id}"/>
+                <span th:text="${decoration.name}">DECORATION</span>
+                <br/>
+            </div>
+        </div>
+        <div class="decoration-group" id="candle">
+            <h3> Designate your fruit:</h3>
+            <div th:each="decoration : ${candle}">
+                <input name="decorations" type="checkbox" th:value="${decoration.id}"/>
+                <span th:text="${decoration.name}">DECORATION</span>
+                <br/>
+            </div>
+        </div>
+    </div>
+    <div>
+        <h3>Name your cake creation:</h3>
+        <input type="text" th:field="*{name}"/>
+<!--        <span class="validationError"-->
+<!--              th:if="${#fields.hasErrors('name')}"-->
+<!--              th:errors="*{name}">Name Error</span>-->
+        <br/>
+        <button>Submit your cake</button>
+    </div>
+</form>
+</body>
+</html>
